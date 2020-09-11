@@ -4,10 +4,10 @@ In this app, we create our string data with title and content. After creating da
 
 **Technologies that are used in app:**
 
-LiveData
-Room
-Kotlin
-ViewModel
+- LiveData
+- Room
+- Kotlin
+- ViewModel
 
 
 ![SVID-20200911-184859-1](https://user-images.githubusercontent.com/22565318/92947252-6ebae000-f460-11ea-822e-b95ad0732dba.gif)
