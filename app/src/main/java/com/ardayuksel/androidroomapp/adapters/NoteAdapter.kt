@@ -1,52 +1,58 @@
 package com.ardayuksel.androidroomapp.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ardayuksel.androidroomapp.R
-import com.ardayuksel.androidroomapp.db.Note
-import kotlinx.android.synthetic.main.activity_list.view.*
+import com.ardayuksel.androidroomapp.data.Note
 import kotlinx.android.synthetic.main.rc_note_item.view.*
 
 class NoteAdapter(
-    private val notes: List<Note>,
-    private val context: Context,
     private val listener: OnItemClickListener
 ) :
     RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        return NoteViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.rc_note_item, parent, false)
-        )
+    var notes = ArrayList<Note>()
+
+    fun setListData(data: ArrayList<Note>) {
+        this.notes = data
     }
 
-    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.title?.text = notes[position].title
-        holder.content?.text = (notes[position].content)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteAdapter.NoteViewHolder {
+        val inflater =
+            LayoutInflater.from(parent.context).inflate(R.layout.rc_note_item, parent, false)
+        return NoteViewHolder(inflater, listener)
+    }
+
+    override fun onBindViewHolder(holder: NoteAdapter.NoteViewHolder, position: Int) {
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(position)
+        }
+        holder.bind(notes[position])
     }
 
     override fun getItemCount(): Int {
         return notes.size
     }
 
-    inner class NoteViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    inner class NoteViewHolder(view: View, val listener: OnItemClickListener) :
+        RecyclerView.ViewHolder(view) {
         var title = view.item_tv_title
         var content = view.item_tv_content
 
-        init {
-            view.setOnClickListener(this)
-        }
-
-        override fun onClick(p0: View?) {
-            val position: Int = adapterPosition
-            listener.onItemClick(position)
+        fun bind(note: Note) {
+            title.text = note.title
+            content.text = note.content
+            title.setOnClickListener {
+                listener.onTitleClickListener(note)
+            }
         }
     }
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
+        fun onTitleClickListener(note: Note)
     }
+
 }

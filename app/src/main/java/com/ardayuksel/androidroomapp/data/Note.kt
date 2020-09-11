@@ -1,4 +1,4 @@
-package com.ardayuksel.androidroomapp.db
+package com.ardayuksel.androidroomapp.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,7 +9,8 @@ data class Note(
     @ColumnInfo(name = "title")
     var title: String,
     @ColumnInfo(name = "content")
-    var content: String) {
+    var content: String
+) {
     @PrimaryKey(autoGenerate = true)
     var noteId: Int = 0
 }

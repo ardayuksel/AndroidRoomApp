@@ -1,5 +1,6 @@
-package com.ardayuksel.androidroomapp.db
+package com.ardayuksel.androidroomapp.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -11,8 +12,8 @@ interface NoteDao {
     fun getAllNotes(): List<Note>
 
     @Insert
-    fun insertAll(vararg note: Note)
+    fun insertAll(note: Note)
 
     @Delete
-    fun delete(vararg note: Note)
+    fun delete(note: Note)
 }
