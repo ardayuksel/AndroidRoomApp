@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ardayuksel.androidroomapp.R
-import com.ardayuksel.androidroomapp.data.Note
+import com.ardayuksel.androidroomapp.data.db.Note
 import kotlinx.android.synthetic.main.rc_note_item.view.*
 
 class NoteAdapter(
@@ -40,19 +40,20 @@ class NoteAdapter(
         RecyclerView.ViewHolder(view) {
         var title = view.item_tv_title
         var content = view.item_tv_content
+        var ivDelete = view.item_iv_delete
 
         fun bind(note: Note) {
             title.text = note.title
             content.text = note.content
-            title.setOnClickListener {
-                listener.onTitleClickListener(note)
+            ivDelete.setOnClickListener {
+                listener.onDeleteClickListener(note)
             }
         }
     }
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
-        fun onTitleClickListener(note: Note)
+        fun onDeleteClickListener(note: Note)
     }
 
 }

@@ -1,8 +1,10 @@
-package com.ardayuksel.androidroomapp.data
+package com.ardayuksel.androidroomapp.data.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.ardayuksel.androidroomapp.data.db.AppDatabase
+import com.ardayuksel.androidroomapp.data.db.Note
 
 class NotesViewModel(app: Application) : AndroidViewModel(app) {
     var allNotes: MutableLiveData<List<Note>>

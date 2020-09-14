@@ -1,4 +1,4 @@
-package com.ardayuksel.androidroomapp.data
+package com.ardayuksel.androidroomapp.data.db
 
 import android.content.Context
 import androidx.room.Database

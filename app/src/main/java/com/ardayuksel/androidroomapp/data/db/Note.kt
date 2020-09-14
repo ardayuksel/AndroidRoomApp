@@ -1,4 +1,4 @@
-package com.ardayuksel.androidroomapp.data
+package com.ardayuksel.androidroomapp.data.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
