@@ -10,6 +10,7 @@ AndroidRoomApp is a basic local database application for training.
 
   - Added delete row item options
   - Added login and register screen
+  - Added delete all options
 
 You can also:
   - Create your daily plans with title and its content
@@ -34,7 +35,6 @@ AndroidRoomApp requires minimum Android 5.0 version to run.
 
 ### Upcoming Features
 
- - Add Delete All
  - Add Update Data
  
 ### Screen (will be updated)
