@@ -22,6 +22,7 @@
         android:id="@+id/btnAddList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:background="#8C1818"
         android:text="ADD"
         android:textColor="#FFFFFF"

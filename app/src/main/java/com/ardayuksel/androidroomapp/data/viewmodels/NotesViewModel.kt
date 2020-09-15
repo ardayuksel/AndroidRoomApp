@@ -35,4 +35,9 @@ class NotesViewModel(app: Application) : AndroidViewModel(app) {
         noteDao?.delete(note)
         getAllNotes()
     }
+    fun deleteAllNotes(){
+        var noteDao = AppDatabase.getAppDatabase(getApplication())?.noteDao()
+        noteDao?.deleteAll()
+        getAllNotes()
+    }
 }
