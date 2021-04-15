@@ -37,7 +37,7 @@ AndroidRoomApp requires minimum Android 5.0 version to run.
 
  - Add Update Data
  
-### Screen (will be updated)
+### Screen
 ![SVID-20200911-184859-1](https://user-images.githubusercontent.com/22565318/92947252-6ebae000-f460-11ea-822e-b95ad0732dba.gif)
 
    [LiveData]: <https://developer.android.com/topic/libraries/architecture/livedata>
